@@ -3,9 +3,9 @@
 2. [x] - create server.js, make folder structure
 3. [x] - create client.js, controllers.js, index.html, views.html, routers, pool.js
 4. [x] - set up server code on server.js, spin up server
-5. [ ] - set up pg code on pool.js
-6. [ ] - create database, 2 tables pets and owners, create database.sql file with creation sql and add to project
-7. [ ] - source in angular/router, client, controllers, material ng on index.html
+5. [x] - set up pg code on pool.js
+6. [x] - create database, 2 tables pets and owners, create database.sql file with creation sql and add to project
+7. [x] - source in angular/router, client, controllers, material ng on index.html
 8. [ ] - basic set up code inside client.js(config), index(ng views, #url for views) , controllers, routers(exports), views
 
 # Dashboard View
