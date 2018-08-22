@@ -4,7 +4,7 @@
 [ ] - create client.js, controllers.js, index.html, views.html, routers, pool.js
 [ ] - set up server code on server.js, spin up server
 [ ] - set up pg code on pool.js
-[ ] - create database, create database.sql file with creation sql and add to project
+[ ] - create database, 2 tables pets and owners, create database.sql file with creation sql and add to project
 [ ] - source in angular/router, client, controllers, material ng on index.html
 [ ] - basic set up code inside client.js(config), index(ng views, #url for views) , controllers, routers(exports), views
 
@@ -33,7 +33,7 @@
 2. [ ] - display this data on DOM
 
 
- # Manage Owners View
+# Manage Owners View
 ## [ ] - Display
 1. [ ] - create input field for add owner
 2. [ ] - create submit button
@@ -41,4 +41,7 @@
 4. [ ] - create "Delete" button and place inside actions columns
 
 ## [ ] - Functionality
-1. [ ] -
+1. [ ] - get value of input into db on submit button click
+2. [ ] - get list of owners name, number of pets and actions button to update on submit button
+3. [ ] - get id of row on delete button click and remove from db
+4. [ ] - update table with updated list on delete button click
