@@ -18,3 +18,6 @@ CREATE TABLE "pets"(
 );
 
 
+INSERT INTO "pets" ("owner_name", "pet_name", "breed", "color", "attitude", "swag_level")
+VALUES ('owner1', 'tyrone biggums', 'cat', 'Hazel', 'high anxiety', 'non-existent',);
+
