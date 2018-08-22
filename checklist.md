@@ -1,15 +1,15 @@
 # Initial Setup
-[ ] - `npm install express body-parser pg`
-[ ] - create server.js, make folder structure
-[ ] - create client.js, controllers.js, index.html, views.html, routers, pool.js
-[ ] - set up server code on server.js, spin up server
-[ ] - set up pg code on pool.js
-[ ] - create database, 2 tables pets and owners, create database.sql file with creation sql and add to project
-[ ] - source in angular/router, client, controllers, material ng on index.html
-[ ] - basic set up code inside client.js(config), index(ng views, #url for views) , controllers, routers(exports), views
+1. [ ] - `npm install express body-parser pg`
+2. [ ] - create server.js, make folder structure
+3. [ ] - create client.js, controllers.js, index.html, views.html, routers, pool.js
+4. [ ] - set up server code on server.js, spin up server
+5. [ ] - set up pg code on pool.js
+6. [ ] - create database, 2 tables pets and owners, create database.sql file with creation sql and add to project
+7. [ ] - source in angular/router, client, controllers, material ng on index.html
+8. [ ] - basic set up code inside client.js(config), index(ng views, #url for views) , controllers, routers(exports), views
 
 # Dashboard View
-[ ] - buttons for dashboard and manage owners
+1. [ ] - buttons for dashboard and manage owners
 ## [ ] - add pet section (display):
  1. [ ] - create inputs for pet name, pet color, pet breed - inside form
  2. [ ] - create dropdown with owners names inside - inside form
