@@ -1,7 +1,7 @@
 # Initial Setup
-1. [ ] - `npm install express body-parser pg`, `npm init`, add "start": "node server/server.js" to package.json
-2. [ ] - create server.js, make folder structure
-3. [ ] - create client.js, controllers.js, index.html, views.html, routers, pool.js
+1. [x] - `npm install express body-parser pg`, `npm init`, add "start": "node server/server.js" to package.json
+2. [x] - create server.js, make folder structure
+3. [x] - create client.js, controllers.js, index.html, views.html, routers, pool.js
 4. [ ] - set up server code on server.js, spin up server
 5. [ ] - set up pg code on pool.js
 6. [ ] - create database, 2 tables pets and owners, create database.sql file with creation sql and add to project
