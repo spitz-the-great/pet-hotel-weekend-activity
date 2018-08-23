@@ -9,11 +9,11 @@
 8. [x] - basic set up code inside client.js(config), index(ng views, #url for views) , controllers, routers(exports), views
 
 # Dashboard View
-1. [ ] - buttons for dashboard and manage owners
-## [ ] - add pet section (display):
- 1. [ ] - create inputs for pet name, pet color, pet breed - inside form
- 2. [ ] - create dropdown with owners names inside - inside form
- 3. [ ] - create submit button - inside form
+1. [x] - buttons for dashboard and manage owners
+## [x] - add pet section (display):
+ 1. [x] - create inputs for pet name, pet color, pet breed - inside form
+ 2. [x] - create dropdown with owners names inside - inside form
+ 3. [x] - create submit button - inside form
 
 ## [ ] - pet section (functionality)
 1. [ ] - on page load GET owners name list from db into dropdown menu

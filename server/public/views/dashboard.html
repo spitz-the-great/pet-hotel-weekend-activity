@@ -1,1 +1,25 @@
-<h1>Dashboard</h1>
+<div class="container">
+
+    <h1>Dashboard</h1>
+
+    <form ng-submit="vm.addPet(vm.petToAdd)">
+
+        <input type="text" placeholder="Pet Name" ng-model="vm.petToAdd.petName">
+        <input type="text" placeholder="Pet Breed" ng-model="vm.petToAdd.petBreed">
+        <input type="text" placeholder="Pet Color" ng-model="vm.petToAdd.petColor">
+        <input type="text" placeholder="Pet Attitude" ng-model="vm.petToAdd.petAttitude">
+        <input type="text" placeholder="Swag Level num/text" ng-model="vm.petToAdd.petAttitude">
+
+        <select required placeholder="Owner Name">
+            <option disabled selected value=''>Select Owner</option>
+            <option value="Bobby DT">Bobby DT</option>
+        </select>
+
+        <input type="submit">
+
+    </form>
+
+
+
+
+</div>
