@@ -1,7 +1,7 @@
 <div class="container">
 
     <h1>Dashboard</h1>
-
+    
     <form ng-submit="vm.addPet(vm.petToAdd)">
 
         <input type="text" placeholder="Pet Name" ng-model="vm.petToAdd.petName">
@@ -10,28 +10,39 @@
         <input type="text" placeholder="Pet Attitude" ng-model="vm.petToAdd.petAttitude">
         <input type="text" placeholder="Swag Level num/text" ng-model="vm.petToAdd.petSwag">
 
-        <select required placeholder="Owner Name">
-            <option disabled selected value=''>Select Owner</option>
-            <option value="Bobby DT">Bobby DT</option>
+        <select 
+        ng-model="selectedOwner" 
+        ng-options="pets.owner_name for pets in vm.petsFromDb"
+        required placeholder="Owner Name">
+
+        <option disabled selected value=''>Select Owner</option>
+           <!-- <option value="Bobby DT">Bobby DT</option> -->
+            <!-- <option ng-repeat="pets.ownerName in vm.petsFromDb">{{pets.ownerName}}</option> -->
+            
         </select>
 
         <input type="submit">
 
     </form>
+
     <md-content class="md-padding" layout-xs="column" layout="row">
         <div flex-xs flex-gt-xs="50" layout="column">
-            <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+            <md-card ng-repeat="pets in vm.petsFromDb"
+                md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
                 <md-card-title>
                     <md-card-title-text>
-                        <span class="md-headline">Card with image</span>
+                        <span class="md-headline">{{pets.pet_name}}</span>
                     </md-card-title-text>
                     <md-card-title-media>
                         <div class="md-media-md card-media"></div>
                     </md-card-title-media>
                 </md-card-title>
                 <md-card-content>
-                    <p>pet breed</p>
-                    <p>pet color</p>
+                    <p>Owner: {{pets.owner_name}}</p>
+                    <p>Color: {{pets.color}}</p>
+                    <p>Breed: {{pets.breed}}</p>
+                    <p>Attitude: {{pets.attitude}}</p>
+                    <p>Swag Level: {{pets.swag_level}}</p>
                 </md-card-content>
                 <md-card-actions layout="row" layout-align="end center">
                     <md-button>Action 1</md-button>
@@ -39,26 +50,5 @@
                 </md-card-actions>
             </md-card>
         </div>
-
-        <div flex-xs flex-gt-xs="50" layout="column">
-                <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
-                    <md-card-title>
-                        <md-card-title-text>
-                            <span class="md-headline">Card with image</span>
-                        </md-card-title-text>
-                        <md-card-title-media>
-                            <div class="md-media-md card-media"></div>
-                        </md-card-title-media>
-                    </md-card-title>
-                    <md-card-content>
-                        <p>pet breed</p>
-                        <p>pet color</p>
-                    </md-card-content>
-                    <md-card-actions layout="row" layout-align="end center">
-                        <md-button>Action 1</md-button>
-                        <md-button>Action 2</md-button>
-                    </md-card-actions>
-                </md-card>
-            </div>
     </md-content>
 </div>

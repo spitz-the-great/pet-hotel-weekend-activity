@@ -15,12 +15,12 @@
  2. [x] - create dropdown with owners names inside - inside form
  3. [x] - create submit button - inside form
 
-## [ ] - pet section (functionality)
-1. [ ] - on page load GET owners name list from db into dropdown menu
-2. [ ] - get value of inputs and current value of owners name dropdown into db on submit button click
+## [x] - add pet section (functionality)
+1. [x] - on page load GET owners name list from db into dropdown menu
+2. [x] - get value of inputs and current value of owners name dropdown into db on submit button click
 
 ## [ ] - history cards section (display) (changed from table to allow for images)
-1. [ ] - create card with: owner, pet, breed, color, checked in, actions
+1. [x] - create card with: owner, pet, breed, color, checked in, actions
 2. [ ] - card will also contain: 
     delete button, 
     check in button(only if pet is not currently checked in), 
@@ -43,8 +43,10 @@
 ## [ ] - Functionality
 1. [ ] - get value of input into db on submit button click
 2. [ ] - get list of owners name, number of pets and actions button to update on submit button
-3. [ ] - get id of row on delete button click and remove from db
-4. [ ] - update table with updated list on delete button click
+3. [ ] - number of pets will require some sql magic and may need to update
+number of pets in table at the time the add new pet is done
+4. [ ] - get id of row on delete button click and remove from db
+5. [ ] - update table with updated list on delete button click
 
 ### Stretch for the stuffs
  - upload/link to image when adding pet

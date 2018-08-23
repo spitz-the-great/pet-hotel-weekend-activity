@@ -13,11 +13,12 @@ CREATE TABLE "pets"(
 "pet_name" VARCHAR(40),
 "breed" VARCHAR(20),
 "color" VARCHAR(20),
+"checked_in" VARCHAR(3),
 "attitude" VARCHAR(20),
 "swag_level" VARCHAR(20)
 );
 
 
-INSERT INTO "pets" ("owner_name", "pet_name", "breed", "color", "attitude", "swag_level")
-VALUES ('owner1', 'tyrone biggums', 'cat', 'Hazel', 'high anxiety', 'non-existent',);
+INSERT INTO "pets" ("owner_name", "pet_name", "breed", "color", "checked_in", "attitude", "swag_level")
+VALUES ('owner1', 'tyrone biggums', 'cat', 'Hazel', 'Yes', 'high anxiety', 'non-existent');
 
