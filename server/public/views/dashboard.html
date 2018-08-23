@@ -27,7 +27,7 @@
     </form>
 
     <md-content class="md-padding" layout-xs="column" layout="row">
-        <div flex-xs flex-gt-xs="25" layout="column">
+        <div flex-xs flex-gt-xs="30" layout="column">
             <md-card ng-repeat="pets in vm.petsFromDb"
                 md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
                 <md-card-title>
@@ -48,8 +48,9 @@
                     <p>Checked In: {{pets.checked_in}}</p>
                 </md-card-content>
                 <md-card-actions layout="row" layout-align="end center">
-                    <md-button>Action 1</md-button>
-                    <md-button ng-click="vm.deleteHistory(pets.id)">Action 2</md-button>
+                    <md-button ng-hide="pets.checked_in == 'Yes'" >Check In</md-button>
+                    <md-button ng-hide="pets.checked_in == 'No'">Check Out</md-button>
+                    <md-button ng-click="vm.deleteHistory(pets.id)">Delete History</md-button>
                 </md-card-actions>
             </md-card>
         </div>

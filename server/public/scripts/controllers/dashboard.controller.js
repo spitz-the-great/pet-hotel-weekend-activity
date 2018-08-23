@@ -2,7 +2,7 @@ app.controller('DashboardController', ['$http', function ($http) {
     console.log('DashboardController has been loaded');
     const vm = this;
 
-    vm.test = 'ng test';
+    vm.testshow= false;
 
     vm.ownerList = [];
 
@@ -28,6 +28,7 @@ app.controller('DashboardController', ['$http', function ($http) {
     // end globals
 
      vm.addPet = function (pet){
+        
          $http({
              method: 'POST',
              url: '/dashboard',

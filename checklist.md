@@ -25,12 +25,12 @@
     delete button, 
     check in button(only if pet is not currently checked in), 
     checkout button(only if pet "checked in" status is false/no)
-3. [ ] - create display functionality for delete/in/out buttons based on status
+3. [x] - create display functionality for delete/in/out buttons based on status
 4. [ ] - create server/db functionality for delete/in/out buttons
 
-## [ ] - history card section (functionality) (changed from table to allow for images)
-1. [ ] - on page load GET data for table from db
-2. [ ] - display this data on DOM
+## [x] - history card section (functionality) (changed from table to allow for images)
+1. [x] - on page load GET data for table from db
+2. [x] - display this data on DOM
 
 
 # Manage Owners View
