@@ -19,14 +19,14 @@
 1. [x] - on page load GET owners name list from db into dropdown menu
 2. [x] - get value of inputs and current value of owners name dropdown into db on submit button click
 
-## [ ] - history cards section (display) (changed from table to allow for images)
+## [x] - history cards section (display) (changed from table to allow for images)
 1. [x] - create card with: owner, pet, breed, color, checked in, actions
-2. [ ] - card will also contain: 
+2. [x] - card will also contain: 
     delete button, 
     check in button(only if pet is not currently checked in), 
     checkout button(only if pet "checked in" status is false/no)
 3. [x] - create display functionality for delete/in/out buttons based on status
-4. [ ] - create server/db functionality for delete/in/out buttons
+4. [x] - create server/db functionality for delete/in/out buttons
 
 ## [x] - history card section (functionality) (changed from table to allow for images)
 1. [x] - on page load GET data for table from db

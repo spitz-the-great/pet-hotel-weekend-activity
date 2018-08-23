@@ -84,7 +84,9 @@ app.controller('DashboardController', ['$http', '$timeout', function ($http, $ti
             })
             
         }
-        vm.getPets();
+        vm.getPets(); 
+        // halp // cant get either $timeout or setTimeout to delay this function call
+        // halp // and so the dom is not updating in time to reflect the actual db data
     }; // end toggleStatus
 
     // calls on load
