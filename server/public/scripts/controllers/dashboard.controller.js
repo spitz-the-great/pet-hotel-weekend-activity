@@ -12,7 +12,8 @@ app.controller('DashboardController', ['$http', function ($http) {
         petBreed: '',
         petColor: '',
         petAttitude: '',
-        petSwag: ''
+        petSwag: '',
+        image_url: ''
     }
 
     vm.petsFromDb =[{

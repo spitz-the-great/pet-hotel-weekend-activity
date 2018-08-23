@@ -4,11 +4,12 @@
     
     <form ng-submit="vm.addPet(vm.petToAdd)">
 
-        <input type="text" placeholder="Pet Name" ng-model="vm.petToAdd.petName">
-        <input type="text" placeholder="Pet Breed" ng-model="vm.petToAdd.petBreed">
-        <input type="text" placeholder="Pet Color" ng-model="vm.petToAdd.petColor">
-        <input type="text" placeholder="Pet Attitude" ng-model="vm.petToAdd.petAttitude">
-        <input type="text" placeholder="Swag Level num/text" ng-model="vm.petToAdd.petSwag">
+        <input type="text" required placeholder="Pet Name" ng-model="vm.petToAdd.petName">
+        <input type="text" required placeholder="Pet Breed" ng-model="vm.petToAdd.petBreed">
+        <input type="text" required placeholder="Pet Color" ng-model="vm.petToAdd.petColor">
+        <input type="text" required placeholder="Pet Attitude" ng-model="vm.petToAdd.petAttitude">
+        <input type="text" required placeholder="Swag Level num/text" ng-model="vm.petToAdd.petSwag">
+        <input type="text" required placeholder="image url" ng-model="vm.petToAdd.image_url">
 
         <select 
         ng-model="selectedOwner" 
@@ -26,7 +27,7 @@
     </form>
 
     <md-content class="md-padding" layout-xs="column" layout="row">
-        <div flex-xs flex-gt-xs="50" layout="column">
+        <div flex-xs flex-gt-xs="25" layout="column">
             <md-card ng-repeat="pets in vm.petsFromDb"
                 md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
                 <md-card-title>
@@ -37,12 +38,14 @@
                         <div class="md-media-md card-media"></div>
                     </md-card-title-media>
                 </md-card-title>
+                <img ng-src={{pets.image_url}}  class="md-card-image">
                 <md-card-content>
                     <p>Owner: {{pets.owner_name}}</p>
                     <p>Color: {{pets.color}}</p>
                     <p>Breed: {{pets.breed}}</p>
                     <p>Attitude: {{pets.attitude}}</p>
                     <p>Swag Level: {{pets.swag_level}}</p>
+                    <p>Checked In: {{pets.checked_in}}</p>
                 </md-card-content>
                 <md-card-actions layout="row" layout-align="end center">
                     <md-button>Action 1</md-button>
