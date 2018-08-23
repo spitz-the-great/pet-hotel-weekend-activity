@@ -6,7 +6,7 @@
 5. [x] - set up pg code on pool.js
 6. [x] - create database, 2 tables pets and owners, create database.sql file with creation sql and add to project
 7. [x] - source in angular/router, client, controllers, material ng on index.html
-8. [ ] - basic set up code inside client.js(config), index(ng views, #url for views) , controllers, routers(exports), views
+8. [x] - basic set up code inside client.js(config), index(ng views, #url for views) , controllers, routers(exports), views
 
 # Dashboard View
 1. [ ] - buttons for dashboard and manage owners

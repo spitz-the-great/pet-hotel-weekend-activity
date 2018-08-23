@@ -4,7 +4,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     console.log('Route config loaded');
 
     $routeProvider
-        .when('/dashboard', {
+        .when('/', {
             templateUrl: 'views/dashboard.html',
             controller: 'DashboardController as vm'
         })

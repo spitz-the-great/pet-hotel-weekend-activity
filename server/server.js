@@ -11,8 +11,8 @@ app.use(express.static('server/public'));
 
 app.use(bodyParser.json());
 
-// app.use('/dashboard', dashBoardRouter);
-// app.use('/owners', ownersRouter);
+app.use('/dashboard', dashBoardRouter);
+app.use('/owners', ownersRouter);
 
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);
