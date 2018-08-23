@@ -28,7 +28,7 @@ router.post('/', function (req, res) {
 
 router.get('/', (req, res) => {
     console.log('/dashboard GET history');
-    const getQuery = `SELECT * FROM "pets";`
+    const getQuery = `SELECT * FROM "pets" ORDER BY id ASC;`
     pool.query(getQuery).then(result => {
         res.send(result.rows);
     }).catch(error => {
@@ -47,7 +47,22 @@ router.delete('/:id', (req, res) => {
             console.log('error deleting hist line: ', error);
             res.sendStatus(500);
         });
-    });
+    }); //end delete history
+
+router.put('/:id', function( req, res ){
+    const id = req.params.id;
+    const status = req.body;
+    console.log('updating status: ', status);
+    const query =  `UPDATE "pets" SET "checked_in" = $1 WHERE id=$2;`
+    pool.query(query, [status.status, id])
+    .then((result) => {
+        console.log('update status result: ', result);
+        res.sendStatus(200);
+        }) .catch((err) => {
+            console.log('error updating in/out status :', err);
+            res.sendStatus(500);
+        });
+});
 
 
 

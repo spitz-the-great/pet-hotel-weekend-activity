@@ -1,8 +1,8 @@
-app.controller('DashboardController', ['$http', function ($http) {
+app.controller('DashboardController', ['$http', '$timeout', function ($http, $timeout) {
     console.log('DashboardController has been loaded');
     const vm = this;
 
-    vm.testshow= false;
+    vm.testshow = false;
 
     vm.ownerList = [];
 
@@ -16,7 +16,7 @@ app.controller('DashboardController', ['$http', function ($http) {
         image_url: ''
     }
 
-    vm.petsFromDb =[{
+    vm.petsFromDb = [{
         ownerName: '',
         petName: '',
         petBreed: '',
@@ -24,49 +24,70 @@ app.controller('DashboardController', ['$http', function ($http) {
         petAttitude: '',
         petSwag: ''
 
-     }];
+    }];
     // end globals
 
-     vm.addPet = function (pet){
-        
-         $http({
-             method: 'POST',
-             url: '/dashboard',
-             data: pet
-         }).then( function ( response ){
-             console.log( 'dashboard controller - addPet() - response:', response.data);
-         }).catch( function (error){
-             console.log('dashboard controller  - addPet() error:', error.statusText);
-         })
-     } // end addPet
+    vm.addPet = function (pet) {
+
+        $http({
+            method: 'POST',
+            url: '/dashboard',
+            data: pet
+        }).then(function (response) {
+            console.log('dashboard controller - addPet() - response:', response.data);
+        }).catch(function (error) {
+            console.log('dashboard controller  - addPet() error:', error.statusText);
+        })
+    } // end addPet
 
 
-     vm.getPets = function (){
-         $http({
-             method: 'GET',
-             url: '/dashboard'
-         }).then((response) => {
-             console.log('back from pets table GET with: ', response.data);
-             vm.petsFromDb = response.data;
-         }).catch(( error ) =>{
-             console.log('error getting pets from db: ', error);
+    vm.getPets = function () {
+        $http({
+            method: 'GET',
+            url: '/dashboard'
+        }).then((response) => {
+            console.log('back from pets table GET with: ', response.data);
+            vm.petsFromDb = response.data;
+        }).catch((error) => {
+            console.log('error getting pets from db: ', error);
             alert('errer wh1l f3tching teh bebies O.O pls check');
-         })
-     } // end getCrew
+        })
+    } // end getCrew
 
-     vm.deleteHistory = function(historyId){
-         $http({
-             method: 'DELETE',
-             url: `/dashboard/${historyId}`
-         }).then( ( response ) => {
+    vm.deleteHistory = function (historyId) {
+        $http({
+            method: 'DELETE',
+            url: `/dashboard/${historyId}`
+        }).then((response) => {
             vm.getPets();
         }).catch((error) => {
             console.log('error making delete hist request', error);
             alert('error deleting history line');
         });
-     }
+    };
 
-     // calls on load
-     vm.getPets();
-     // end calls on load
+    vm.toggleStatus = function (checkInStatus, id) {
+        console.log(checkInStatus, id);
+        if (checkInStatus == 'Yes') {
+            $http({
+                method: 'PUT',
+                url: '/dashboard/' + id,
+                data: { status: 'No'}
+            })
+            
+        }
+        else if( checkInStatus == 'No'){
+            $http({
+                method: 'PUT',
+                url: '/dashboard/' + id,
+                data: { status: 'Yes'}
+            })
+            
+        }
+        vm.getPets();
+    }; // end toggleStatus
+
+    // calls on load
+    vm.getPets();
+    // end calls on load
 }]);

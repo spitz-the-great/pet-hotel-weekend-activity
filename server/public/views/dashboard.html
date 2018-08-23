@@ -48,9 +48,15 @@
                     <p>Checked In: {{pets.checked_in}}</p>
                 </md-card-content>
                 <md-card-actions layout="row" layout-align="end center">
-                    <md-button ng-hide="pets.checked_in == 'Yes'" >Check In</md-button>
-                    <md-button ng-hide="pets.checked_in == 'No'">Check Out</md-button>
+
+                    <md-button  ng-click="vm.toggleStatus(pets.checked_in, pets.id)"
+                                ng-hide="pets.checked_in == 'Yes'" >Check In</md-button>
+
+                    <md-button  ng-click="vm.toggleStatus(pets.checked_in, pets.id)"
+                                ng-hide="pets.checked_in == 'No'">Check Out</md-button>
+
                     <md-button ng-click="vm.deleteHistory(pets.id)">Delete History</md-button>
+
                 </md-card-actions>
             </md-card>
         </div>
