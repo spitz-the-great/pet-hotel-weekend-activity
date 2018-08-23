@@ -13,4 +13,5 @@ app.config(['$routeProvider', function ($routeProvider) {
             controller: 'OwnersController as vm'
         })
         .otherwise( { template: '<h1>404</h1>' });
+        
 }]);

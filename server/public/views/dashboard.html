@@ -8,7 +8,7 @@
         <input type="text" placeholder="Pet Breed" ng-model="vm.petToAdd.petBreed">
         <input type="text" placeholder="Pet Color" ng-model="vm.petToAdd.petColor">
         <input type="text" placeholder="Pet Attitude" ng-model="vm.petToAdd.petAttitude">
-        <input type="text" placeholder="Swag Level num/text" ng-model="vm.petToAdd.petAttitude">
+        <input type="text" placeholder="Swag Level num/text" ng-model="vm.petToAdd.petSwag">
 
         <select required placeholder="Owner Name">
             <option disabled selected value=''>Select Owner</option>
@@ -18,8 +18,47 @@
         <input type="submit">
 
     </form>
+    <md-content class="md-padding" layout-xs="column" layout="row">
+        <div flex-xs flex-gt-xs="50" layout="column">
+            <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Card with image</span>
+                    </md-card-title-text>
+                    <md-card-title-media>
+                        <div class="md-media-md card-media"></div>
+                    </md-card-title-media>
+                </md-card-title>
+                <md-card-content>
+                    <p>pet breed</p>
+                    <p>pet color</p>
+                </md-card-content>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button>Action 1</md-button>
+                    <md-button>Action 2</md-button>
+                </md-card-actions>
+            </md-card>
+        </div>
 
-
-
-
+        <div flex-xs flex-gt-xs="50" layout="column">
+                <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">Card with image</span>
+                        </md-card-title-text>
+                        <md-card-title-media>
+                            <div class="md-media-md card-media"></div>
+                        </md-card-title-media>
+                    </md-card-title>
+                    <md-card-content>
+                        <p>pet breed</p>
+                        <p>pet color</p>
+                    </md-card-content>
+                    <md-card-actions layout="row" layout-align="end center">
+                        <md-button>Action 1</md-button>
+                        <md-button>Action 2</md-button>
+                    </md-card-actions>
+                </md-card>
+            </div>
+    </md-content>
 </div>

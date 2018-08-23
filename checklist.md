@@ -19,16 +19,16 @@
 1. [ ] - on page load GET owners name list from db into dropdown menu
 2. [ ] - get value of inputs and current value of owners name dropdown into db on submit button click
 
-## [ ] - history table section (display)
-1. [ ] - create headers: owner, pet, breed, color, checked in, actions
-2. [ ] - actions column will contain: 
+## [ ] - history cards section (display) (changed from table to allow for images)
+1. [ ] - create card with: owner, pet, breed, color, checked in, actions
+2. [ ] - card will also contain: 
     delete button, 
     check in button(only if pet is not currently checked in), 
     checkout button(only if pet "checked in" status is false/no)
 3. [ ] - create display functionality for delete/in/out buttons based on status
 4. [ ] - create server/db functionality for delete/in/out buttons
 
-## [ ] - history table section (functionality)
+## [ ] - history card section (functionality) (changed from table to allow for images)
 1. [ ] - on page load GET data for table from db
 2. [ ] - display this data on DOM
 
@@ -45,3 +45,7 @@
 2. [ ] - get list of owners name, number of pets and actions button to update on submit button
 3. [ ] - get id of row on delete button click and remove from db
 4. [ ] - update table with updated list on delete button click
+
+### Stretch for the stuffs
+ - upload/link to image when adding pet
+ - filter list of cards based on checked in/out
