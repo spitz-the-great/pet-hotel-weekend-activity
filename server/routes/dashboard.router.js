@@ -1,21 +1,21 @@
 const router = require('express').Router();
 const pool = require('../modules/pool');
 
-router.post('/', function (req, res){
+router.post('/', function (req, res) {
     console.log('addPet post /dashboard', req.body);
     const petFromDom = req.body;
     const query = `INSERT INTO "pets" ("owner_name", "pet_name", "breed", "color", "checked_in", "attitude", "swag_level", "image_url")
                 VALUES($1, $2, $3, $4, $5, $6, $7, $8);`
     // end post sql
-    pool.query(query, 
+    pool.query(query,
         [petFromDom.ownerName,
-         petFromDom.petName,
-         petFromDom.petBreed, 
-         petFromDom.petColor, 
-         petFromDom.checked_in,
-         petFromDom.petAttitude,
-         petFromDom.petSwag,
-         petFromDom.image_url
+        petFromDom.petName,
+        petFromDom.petBreed,
+        petFromDom.petColor,
+        petFromDom.checked_in,
+        petFromDom.petAttitude,
+        petFromDom.petSwag,
+        petFromDom.image_url
         ]).then((result) => {
             res.sendStatus(201);
         })
@@ -35,6 +35,20 @@ router.get('/', (req, res) => {
         console.log('error getting the babies at /dashboard pls halp', error);
         res.sendStatus(500);
     });
-})
+}) // end GET pets
 
-module.exports= router;
+router.delete('/:id', (req, res) => {
+    console.log('delete history line in /dashboard');
+    const historyId = req.params.id;
+    pool.query(`DELETE FROM "pets" WHERE "id"=$1;`, [historyId])
+        .then((result) => {
+            res.sendStatus(200);
+        }).catch((error) => {
+            console.log('error deleting hist line: ', error);
+            res.sendStatus(500);
+        });
+    });
+
+
+
+    module.exports = router;

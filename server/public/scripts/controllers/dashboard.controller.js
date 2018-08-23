@@ -52,5 +52,20 @@ app.controller('DashboardController', ['$http', function ($http) {
             alert('errer wh1l f3tching teh bebies O.O pls check');
          })
      } // end getCrew
+
+     vm.deleteHistory = function(historyId){
+         $http({
+             method: 'DELETE',
+             url: `/dashboard/${historyId}`
+         }).then( ( response ) => {
+            vm.getPets();
+        }).catch((error) => {
+            console.log('error making delete hist request', error);
+            alert('error deleting history line');
+        });
+     }
+
+     // calls on load
      vm.getPets();
+     // end calls on load
 }]);
