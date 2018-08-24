@@ -29,8 +29,8 @@
     </form>
 
     <md-content class="md-padding" layout-xs="column" layout="row">
-        <div flex-xs flex-gt-xs="30" layout="column">
-            <md-card ng-repeat="pets in vm.petsFromDb"
+        <div flex-xs flex-gt-xs="30" layout="row" layout-align="start start" layout-xs="column">
+            <md-card  ng-repeat="pets in vm.petsFromDb" 
                 md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
                 <md-card-title>
                     <md-card-title-text>
