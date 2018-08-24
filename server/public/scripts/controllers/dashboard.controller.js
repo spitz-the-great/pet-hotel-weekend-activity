@@ -28,8 +28,8 @@ app.controller('DashboardController', ['$http', '$timeout', function ($http, $ti
     // end globals
 
     vm.addPet = function (pet) {
-        alert(vm.ownerID.owner_id);
-        pet.ownerID = vm.ownerID.owner_id;
+        alert(vm.ownerID.id);
+        pet.ownerID = vm.ownerID.id;
         $http({
             method: 'POST',
             url: '/dashboard',
@@ -54,6 +54,19 @@ app.controller('DashboardController', ['$http', '$timeout', function ($http, $ti
             alert('errer wh1l f3tching teh bebies O.O pls check');
         })
     } // end getCrew
+
+    vm.getOwners = function () {
+        $http({
+            method: 'GET',
+            url: '/dashboard/getOwners'
+        }).then((response) => {
+            console.log('back from owners table GET with: ', response.data);
+            vm.ownerList = response.data;
+        }).catch((error) => {
+            console.log('error getting owners from db: ', error);
+            alert('error getting owners list from db');
+        })
+    }
 
     vm.deleteHistory = function (historyId) {
         $http({
@@ -92,5 +105,6 @@ app.controller('DashboardController', ['$http', '$timeout', function ($http, $ti
 
     // calls on load
     vm.getPets();
+    vm.getOwners();
     // end calls on load
 }]);

@@ -40,6 +40,17 @@ router.get('/', (req, res) => {
     });
 }) // end GET pets
 
+router.get('/getOwners', (req, res) => {
+    console.log('/dashboard GET ownersList');
+    const query = `SELECT * FROM "owners" ORDER BY "id" ASC;`;
+    pool.query(query).then(result => {
+        res.send(result.rows);
+    }).catch(error => {
+        console.log('error getting the owners at /dashboard/getOwners pls halp', error);
+        res.sendStatus(500);
+    });
+}); // end GET ownersList
+
 router.delete('/:id', (req, res) => {
     console.log('delete history line in /dashboard');
     const historyId = req.params.id;

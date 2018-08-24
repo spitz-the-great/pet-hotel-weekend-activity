@@ -12,9 +12,9 @@
         <input type="text" required placeholder="image url" ng-model="vm.petToAdd.image_url">
 
        
-
+<!--ng-options="pets.owners_name for pets in vm.petsFromDb"-->
         <select 
-        ng-options="pets.owners_name for pets in vm.petsFromDb"
+        ng-options="owners.owners_name for owners in vm.ownerList"
         ng-model="vm.ownerID"
         required placeholder="Owner Name">
 
