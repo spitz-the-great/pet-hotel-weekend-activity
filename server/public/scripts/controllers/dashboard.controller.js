@@ -3,11 +3,11 @@ app.controller('DashboardController', ['$http', '$timeout', function ($http, $ti
     const vm = this;
 
     vm.testshow = false;
-
+    vm.ownerID
     vm.ownerList = [];
 
     vm.petToAdd = {
-        ownerName: '',
+        ownerID: '',
         petName: '',
         petBreed: '',
         petColor: '',
@@ -28,7 +28,8 @@ app.controller('DashboardController', ['$http', '$timeout', function ($http, $ti
     // end globals
 
     vm.addPet = function (pet) {
-
+        alert(vm.ownerID.owner_id);
+        pet.ownerID = vm.ownerID.owner_id;
         $http({
             method: 'POST',
             url: '/dashboard',
@@ -82,8 +83,8 @@ app.controller('DashboardController', ['$http', '$timeout', function ($http, $ti
                 url: '/dashboard/' + id,
                 data: { status: 'Yes'}
             })
-            
         }
+
         vm.getPets(); 
         // halp // cant get either $timeout or setTimeout to delay this function call
         // halp // and so the dom is not updating in time to reflect the actual db data

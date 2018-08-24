@@ -4,11 +4,11 @@ const pool = require('../modules/pool');
 router.post('/', function (req, res) {
     console.log('addPet post /dashboard', req.body);
     const petFromDom = req.body;
-    const query = `INSERT INTO "pets" ("owner_name", "pet_name", "breed", "color", "checked_in", "attitude", "swag_level", "image_url")
+    const query = `INSERT INTO "pets" ("owner_id", "pet_name", "breed", "color", "checked_in", "attitude", "swag_level", "image_url")
                 VALUES($1, $2, $3, $4, $5, $6, $7, $8);`
     // end post sql
     pool.query(query,
-        [petFromDom.ownerName,
+        [petFromDom.ownerID,
         petFromDom.petName,
         petFromDom.petBreed,
         petFromDom.petColor,
@@ -28,7 +28,10 @@ router.post('/', function (req, res) {
 
 router.get('/', (req, res) => {
     console.log('/dashboard GET history');
-    const getQuery = `SELECT * FROM "pets" ORDER BY id ASC;`
+    const getQuery = `SELECT "pets"."id", "pets"."pet_name", "pets"."breed", "pets"."color", "pets"."checked_in", "pets"."attitude", "pets"."swag_level", "pets"."image_url", "pets"."owner_id", "owners"."owners_name"
+    FROM "pets"
+    JOIN "owners" ON "pets"."owner_id" = "owners"."id"
+    ORDER BY "pets"."id" ASC;`
     pool.query(getQuery).then(result => {
         res.send(result.rows);
     }).catch(error => {

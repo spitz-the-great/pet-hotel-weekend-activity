@@ -11,9 +11,11 @@
         <input type="text" required placeholder="Swag Level num/text" ng-model="vm.petToAdd.petSwag">
         <input type="text" required placeholder="image url" ng-model="vm.petToAdd.image_url">
 
+       
+
         <select 
-        ng-model="selectedOwner" 
-        ng-options="pets.owner_name for pets in vm.petsFromDb"
+        ng-options="pets.owners_name for pets in vm.petsFromDb"
+        ng-model="vm.ownerID"
         required placeholder="Owner Name">
 
         <option disabled selected value=''>Select Owner</option>
@@ -40,7 +42,7 @@
                 </md-card-title>
                 <img ng-src={{pets.image_url}}  class="md-card-image">
                 <md-card-content>
-                    <p>Owner: {{pets.owner_name}}</p>
+                    <p>Owner: {{pets.owners_name}}</p>
                     <p>Color: {{pets.color}}</p>
                     <p>Breed: {{pets.breed}}</p>
                     <p>Attitude: {{pets.attitude}}</p>
