@@ -1,1 +1,38 @@
+<div class="container" ng-controller="ownersController">
+
 <h1>Manage Owners</h1>
+
+    <form ng-submit="vm.addOwner(vm.ownerToAdd)">
+        <input type="text" required placeholder="Owner Name" ng-model="vm.ownerToAdd.ownerName">
+        <input type="submit">
+    </form>
+
+    <md-content class="md-padding" layout-xs="column" layout="row">
+            <div flex-xs flex-gt-xs="30" layout="row" layout-align="start start" layout-xs="column">
+                <md-card  ng-repeat="owners in vm.ownersFromDb" 
+                    md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">{{owners.owners_name}}</span>
+                        </md-card-title-text>
+                        <md-card-title-media>
+                            <div class="md-media-md card-media"></div>
+                        </md-card-title-media>
+                    </md-card-title>
+                    <img  class="md-card-image">
+                    <md-card-content>
+                        <p>Owner: {{owners.owners_name}}</p>
+                    </md-card-content>
+                    <md-card-actions layout="row" layout-align="end center">
+    
+                        <md-button ng-click="vm.deleteOwner(owners.id)">Delete History</md-button>
+    
+                    </md-card-actions>
+                </md-card>
+            </div>
+        </md-content>
+
+
+
+
+</div>

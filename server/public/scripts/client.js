@@ -10,7 +10,7 @@ app.config(['$routeProvider', function ($routeProvider) {
         })
         .when('/owners', {
             templateUrl: 'views/owners.html',
-            controller: 'OwnersController as vm'
+            controller: 'ownersController as vm'
         })
         .otherwise( { template: '<h1>404</h1>' });
         
