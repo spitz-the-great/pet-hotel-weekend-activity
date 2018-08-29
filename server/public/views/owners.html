@@ -1,7 +1,8 @@
-<div class="container" ng-controller="ownersController">
+<div class="container">
 
 <h1>Manage Owners</h1>
 
+{{vm.ownerToAdd}}
     <form ng-submit="vm.addOwner(vm.ownerToAdd)">
         <input type="text" required placeholder="Owner Name" ng-model="vm.ownerToAdd.ownerName">
         <input type="submit">
@@ -31,8 +32,5 @@
                 </md-card>
             </div>
         </md-content>
-
-
-
 
 </div>

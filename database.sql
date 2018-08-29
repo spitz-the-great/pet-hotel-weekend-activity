@@ -30,8 +30,8 @@ VALUES ('owner1', 1), ('owner2', 1);
 -- DELETE route will need to update number of pets in owners table
 
 INSERT INTO "pets" ("pet_name", "breed", "color", "checked_in", "attitude", "swag_level", "image_url", "owner_id")
-VALUES ('tyrone biggums', 'cat', 'Hazel', 'No', 'high anxiety', 'non-existent' 1,
- 'https://i.pinimg.com/236x/7d/2d/57/7d2d5725cdecdc10bbc117b8f3b99c60--funny-cats-funny-animals.jpg');
+VALUES ('Yeesus', 'cat', 'whitish', 'No', 'god complex', 'higher than yours',  'https://78.media.tumblr.com/5146f19c28a0028fc18bbaecbd854b41/tumblr_mlcp9guRPJ1r99egpo1_500.jpg', 1
+);
 
 INSERT INTO "pets" ("pet_name", "breed", "color", "checked_in", "attitude", "swag_level", "image_url", "owner_id")
 VALUES ('old doge kenobi', 'jedi', 'old', 'No', 'old', 'Liam Neeson', 2,

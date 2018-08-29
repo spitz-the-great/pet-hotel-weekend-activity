@@ -4,14 +4,15 @@ app.config(['$routeProvider', function ($routeProvider) {
     console.log('Route config loaded');
 
     $routeProvider
-        .when('/', {
-            templateUrl: 'views/dashboard.html',
-            controller: 'DashboardController as vm'
-        })
         .when('/owners', {
             templateUrl: 'views/owners.html',
             controller: 'ownersController as vm'
         })
-        .otherwise( { template: '<h1>404</h1>' });
-        
+        .when('/', {
+            templateUrl: 'views/dashboard.html',
+            controller: 'DashboardController as vm'
+        })
+
+        .otherwise({ template: '<h1>404</h1>' });
+
 }]);

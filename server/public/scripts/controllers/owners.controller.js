@@ -2,18 +2,18 @@ app.controller('ownersController', ['$http', function ($http) {
     console.log('OwnersController has been loaded');
     const vm = this;
 
-    vm.ownerID
+    // vm.ownerID;
     vm.ownerToAdd = {
-        ownerID = '',
-        ownerName = '',
-        numberOfPets
+        ownerID: '',
+        ownerName: '',
+        numberOfPets: 0
     };
 
     vm.ownersFromDb = [{
 
     }];
     
-    // end globals
+    // // end globals
 
     vm.addOwner = function (owner) {
         alert(vm.ownerID.id);
